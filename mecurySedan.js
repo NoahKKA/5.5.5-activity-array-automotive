@@ -15,5 +15,22 @@ class Car extends Vehicle {
         this.fuel = 10;
         this.scheduleService = false;
     }
-    super.start()
+    super.start();
+
+    loadPassenger (num) {
+        if (num <= this.maximumPassengers) {
+            this.passenger = num
+            return this.passenger;
+        } else {
+            console.log("Passengers exceed maximum passengers")
+        }
+    }
+
+    checkService (milegae) {
+        if (this.milegae > 30000) {
+            this.scheduleService = true;
+            console.log('Time for maintenance')
+            return this.scheduleService
+        }
+    }
 }
